@@ -1,0 +1,68 @@
+.img-welcome {
+  width: 40px;
+  height: 40px;
+  margin-top: -10px;
+}
+
+.img-circle {
+  width: 656px;
+  /* clip-path: circle(300px at center); */
+  /* border: solid 5px black; */
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.row {
+  height: 100vh;
+  align-items: center;
+}
+
+.col-6 {
+  text-align: center;
+}
+
+.welcome__p {
+  font-size: 20px;
+  margin-top: -10px;
+}
+
+.configuration {
+  width: 40%;
+  margin: auto;
+}
+
+.configure {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  font-weight: bold;
+  height: 45px;
+  align-items: center;
+}
+
+.configure-left {
+  margin-top: 5px;
+  float: left; 
+  text-align: left;
+}
+
+.configure-right {
+  float: right;
+  text-align: right;
+}
+
+input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid white;
+  background-color: black;
+  color: white;
+  outline: none;
+  width: 40px;
+}
