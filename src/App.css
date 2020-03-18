@@ -28,6 +28,11 @@
   /* border: 2px solid blue; */
 }
 
+.circle {
+  padding-top: 25px;
+  padding-left: 60px;
+}
+
 .welcome__p {
   font-size: 20px;
   margin-top: -10px;
@@ -36,7 +41,7 @@
 .configuration {
   width: 40%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .configure {
@@ -54,11 +59,13 @@
   margin-top: 5px;
   float: left; 
   text-align: left;
+  margin-left: 10px;
 }
 
 .configure-right {
   float: right;
   text-align: right;
+  margin-right: 10px;
 }
 
 input {
