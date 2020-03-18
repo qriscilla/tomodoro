@@ -4,10 +4,26 @@
   margin-top: -10px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* svg circle {
+  fill: none;
+  stroke: black;
+  stroke-width: 40;
+  stroke-linecap: 40;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 570;
+}
+
+.circle svg circle{
+  stroke: pink;
+} */
+
 .img-circle {
-  width: 550px;
-  /* clip-path: circle(300px at center); */
-  /* border: solid 5px black; */
+  width: 562px;
 }
 
 .container {
@@ -66,3 +82,29 @@ input {
   outline: none;
   width: 40px;
 }
+
+
+
+
+
+
+
+/* .progress {
+   transform: rotate(-270deg);
+   background-color: white !important;
+} */
+svg{
+  transform: rotate(-90deg);
+}
+ .progress__value {
+	 stroke-dasharray: 1900;
+   stroke-dashoffset: 0;
+   animation: progress 5s infinite alternate;
+}
+ @keyframes progress {
+	 from { stroke-dashoffset: 1900; }
+	 to { stroke-dashoffset: 0; }
+  }
+  /* image {
+    transform: rotate(-270deg) !important;
+  } */
