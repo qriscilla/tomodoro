@@ -83,11 +83,11 @@ svg{
   transform: rotate(-90deg);
 }
 
-.progress__value {
+/* .progress__value {
 	stroke-dasharray: 1900;
   stroke-dashoffset: 0;
-  animation: progress 5s infinite alternate;
-}
+  animation: progress 30s;
+} */
 
 @keyframes progress {
 	from { stroke-dashoffset: 1900; }
