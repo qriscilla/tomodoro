@@ -67,7 +67,7 @@
   margin-right: 10px;
 }
 
-input {
+.input__number {
   border-top: none;
   border-right: none;
   border-left: none;
@@ -95,4 +95,12 @@ svg{
   stroke-dasharray: 1900;
   stroke-dashoffset: 0;
   animation: progress calc(var(--pacman-rotation) * 1s);
+}
+
+/* svg:hover .img-circle {
+  opacity: 1;
+} */
+
+.svgg:hover .circlehover {
+  fill: rgba(0,0,0,0.5);
 }
