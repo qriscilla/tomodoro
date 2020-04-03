@@ -13,7 +13,7 @@
   width: 562px;
 }
 
-.container {
+.container-fluid {
   width: 100vw;
   height: 100vh;
 }
@@ -38,9 +38,9 @@
 }
 
 .configuration {
-  width: 40%;
+  width: 250px;
   margin: auto;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .configure {
@@ -48,38 +48,41 @@
   background-color: black;
   color: white;
   margin: 5px;
-  padding: 5px;
   font-weight: bold;
   height: 45px;
-  align-items: center;
+  display: flex;
 }
 
-.configure-left {
-  margin-top: 5px;
-  float: left; 
-  text-align: left;
-  margin-left: 10px;
+.configure p {
+  margin-top: 10px;
 }
 
-.configure-right {
-  float: right;
-  text-align: right;
+.configure__type {
+  margin-left: 5px;
   margin-right: 10px;
+  width: 125px;
 }
 
-.input__number {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 2px solid white;
+.configure__remote {
   background-color: black;
+  border: none;
+  outline: none !important;
   color: white;
-  outline: none;
-  width: 40px;
 }
 
-svg{
+.configure__remote__down {
+  transform: rotate(-180deg);
+  margin-right: 5px;
+}
+
+.configure__remote__up {
+  margin-left: 5px;
+}
+
+.svg {
   transform: rotate(-90deg);
+  z-index: -1;
+  position: relative;
 }
 
 @keyframes progress {
@@ -87,9 +90,7 @@ svg{
 	to { stroke-dashoffset: 0; }
 }
 
-*:root {
-  --pacman-rotation: 0;
-}
+*:root { --pacman-rotation: 0; }
 
 .ciircle {
   stroke-dasharray: 1900;
@@ -101,6 +102,12 @@ svg{
   opacity: 1;
 } */
 
-.svgg:hover .circlehover {
-  fill: rgba(0,0,0,0.5);
+.svgg:hover .circlehover { fill: rgba(0,0,0,0.5); }
+
+.time {
+  font-size: 90px;
+  color: white;
+  margin-top: -400px;
+  margin-left: 160px;
+  position: fixed;
 }

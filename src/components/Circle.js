@@ -17,7 +17,6 @@ class Circle extends Component {
                         stroke='black' strokeWidth='40' 
                         className='ciircle'
                     />
-                    {/* <circle className="progress__value" cx='350' cy='350' r='300' fill='none' stroke='black' strokeWidth='40' /> */}
                     <svg height='670' width='670' className='svgg'>
                         <image 
                             className='img-circle' 
@@ -33,9 +32,8 @@ class Circle extends Component {
                             fill='none'
                         />
                     </svg>
-
                 </svg>
-
+                <h1 className='time'>00:25:00</h1>
             </div>
         );
     }
