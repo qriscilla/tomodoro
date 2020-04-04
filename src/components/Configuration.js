@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-// import { faPlay } from '@fortawesome/free-solid-svg-icons';
-// import { faPause } from '@fortawesome/free-solid-svg-icons';
-// import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPause } from '@fortawesome/free-solid-svg-icons';
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
 // class Configuration extends Component {
 
@@ -133,7 +133,7 @@ class Configuration extends React.Component {
                     </button>
                 </div>
     
-                {/* <div className='configure'>
+                <div className='configure'>
                     <p className='configure__type'>Play</p>
                     <button className='configure__remote' onClick={this.playTimer}>
                         <FontAwesomeIcon icon={faPlay} />
@@ -152,7 +152,7 @@ class Configuration extends React.Component {
                     <button className='configure__remote' onClick={this.resetTimer}>
                         <FontAwesomeIcon icon={faPowerOff} />
                     </button>
-                </div> */}
+                </div>
     
             </div>
         );
