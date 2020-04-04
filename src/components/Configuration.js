@@ -145,16 +145,22 @@ class Configuration extends React.Component {
                     this.setState({
                         timerSecond: 59
                     })
+                    this.sendData();
                 }
                 break;
             default:
                 this.setState((prevState) => {
                     return {
-                        timerSecond: prevState.timerSecond - 1
+                        timerSecond: prevState.timerSecond - 1,
                     }
                 })
+                this.sendData();
                 break;
         }
+    }
+
+    sendData = () => {
+        this.props.parentCallback(this.state.timerSecond);
     }
 
     // PAUSE 
@@ -165,6 +171,7 @@ class Configuration extends React.Component {
 
     // RESET
     resetTimer() {
+        this.sendData();
         this.stopTimer();
         this.props.resetTimer();
         this.props.onPlayStopTimer(false);
@@ -221,6 +228,12 @@ class Configuration extends React.Component {
                     <button className='configure__remote' onClick={this.resetTimer}>
                         <FontAwesomeIcon icon={faPowerOff} />
                     </button>
+                </div>
+
+                <div className='configure'>
+                    <p>
+                    {this.state.timerSecond}                     
+                    </p>
                 </div>
     
             </div>

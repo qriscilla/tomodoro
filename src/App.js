@@ -13,7 +13,7 @@ class App extends React.Component {
       sessionLength: 25,
       timerMinute: 25,
       timerSecond: 0,
-      isPlay: false
+      isPlay: false,
     }
 
     this.onIncreaseBreakLength = this.onIncreaseBreakLength.bind(this);
@@ -24,6 +24,10 @@ class App extends React.Component {
     this.onUpdateTimerMinute = this.onUpdateTimerMinute.bind(this);
     this.onResetTimer = this.onResetTimer.bind(this);
     this.onPlayStopTimer = this.onPlayStopTimer.bind(this);
+  }
+
+  callbackFunction = (childData) => {
+    this.setState({timerSecond: childData})
   }
 
   onIncreaseBreakLength() {
@@ -82,7 +86,8 @@ class App extends React.Component {
 
   onResetTimer() {
     this.setState({
-      timerMinute: this.state.sessionLength
+      timerMinute: this.state.sessionLength,
+      // timerSecond: 0,
     })
   }
 
@@ -100,7 +105,6 @@ class App extends React.Component {
             <Circle 
               timerMinute = {this.state.timerMinute}
               timerSecond = {this.state.timerSecond}
-              // breakLength = {this.state.breakLength}
             />
           </div>
           <div className='col-6'>
@@ -112,6 +116,7 @@ class App extends React.Component {
               timerMinute = {this.state.timerMinute}
               timerSecond = {this.state.timerSecond}
               updateTimerMinute = {this.onUpdateTimerMinute}
+              updateTimerSecond = {this.onUpdateTimerSecond}
               toggleInterval = {this.onToggleInterval}
 
               breakInterval = {this.state.breakLength} 
@@ -121,7 +126,10 @@ class App extends React.Component {
               sessionLength = {this.state.sessionLength} 
               increaseSession = {this.onIncreaseSessionLength}
               decreaseSession = {this.onDecreaseSessionLength}
+
+              parentCallback = {this.callbackFunction}
             />
+
           </div>
         </div>
       </div>
