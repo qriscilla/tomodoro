@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import { faPause } from '@fortawesome/free-solid-svg-icons';
-import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+// import { faPlay } from '@fortawesome/free-solid-svg-icons';
+// import { faPause } from '@fortawesome/free-solid-svg-icons';
+// import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
 // class Configuration extends Component {
 
@@ -61,86 +61,102 @@ import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 //     }
 // }
 
-function Configuration(props) {
+class Configuration extends React.Component {
 
-    function decreaseCounter() {
-        if(props.breakInterval === 1) {
-            return;
-        }
-        props.decreaseBreak();
+    constructor() {
+        super();
+        this.state = {
+            // isSession: true,
+            // timerSecond: 0,
+            // intervalId: 0
+        };
+
+        this.decreaseCounter = this.decreaseCounter.bind(this);
+        this.increaseCounter = this.increaseCounter.bind(this);
+        this.decreaseSession = this.decreaseSession.bind(this);
+        this.increaseSession = this.increaseSession.bind(this);
     }
 
-    function increaseCounter() {
-        if(props.breakInterval === 60) {
+    decreaseCounter() {
+        if(this.props.breakInterval === 1) {
             return;
         }
-        props.increaseBreak();
+        this.props.decreaseBreak();
     }
 
-    function decreaseSession() {
-        if(props.sessionLength === 60) {
+    increaseCounter() {
+        if(this.props.breakInterval === 60) {
             return;
         }
-        props.decreaseSession();
+        this.props.increaseBreak();
     }
 
-    function increaseSession() {
-        if(props.sessionLength === 1) {
+    decreaseSession() {
+        if(this.props.sessionLength === 60) {
             return;
         }
-        props.increaseSession();
+        this.props.decreaseSession();
     }
 
-    return(
-        <div className='configuration'>
-        
-            <h5 style={{fontWeight: 'bold'}}>configuration</h5>
+    increaseSession() {
+        if(this.props.sessionLength === 1) {
+            return;
+        }
+        this.props.increaseSession();
+    }
 
-            <div className='configure'>
-                <p className='configure__type'>Session Length</p>
-                <button className='configure__remote' onClick={decreaseSession}>
-                    <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
-                </button>
-                <p>{props.sessionLength} min</p>
-                <button className='configure__remote' onClick={increaseSession}>
-                    <FontAwesomeIcon className='configure__remote__up'  icon={faChevronUp} />
-                </button>
+    render() {
+        return(
+            <div className='configuration'>
+            
+                <h5 style={{fontWeight: 'bold'}}>configuration</h5>
+    
+                <div className='configure'>
+                    <p className='configure__type'>Session Length</p>
+                    <button className='configure__remote' onClick={this.decreaseSession}>
+                        <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
+                    </button>
+                    <p>{this.props.sessionLength} min</p>
+                    <button className='configure__remote' onClick={this.increaseSession}>
+                        <FontAwesomeIcon className='configure__remote__up'  icon={faChevronUp} />
+                    </button>
+                </div>
+    
+                <div className='configure'>
+                    <p className='configure__type'>Break Length</p>
+                    <button className='configure__remote' onClick={this.decreaseCounter}>
+                        <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
+                    </button>
+                    <p>{this.props.breakInterval} min</p>
+                    <button className='configure__remote' onClick={this.increaseCounter}>
+                        <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
+                    </button>
+                </div>
+    
+                {/* <div className='configure'>
+                    <p className='configure__type'>Play</p>
+                    <button className='configure__remote' onClick={this.playTimer}>
+                        <FontAwesomeIcon icon={faPlay} />
+                    </button>
+                </div>
+    
+                <div className='configure'>
+                    <p className='configure__type'>Pause</p>
+                    <button className='configure__remote' onClick={this.stopTimer}>
+                        <FontAwesomeIcon icon={faPause} />
+                    </button>
+                </div>
+    
+                <div className='configure'>
+                    <p className='configure__type'>Reset</p>
+                    <button className='configure__remote' onClick={this.resetTimer}>
+                        <FontAwesomeIcon icon={faPowerOff} />
+                    </button>
+                </div> */}
+    
             </div>
-
-            <div className='configure'>
-                <p className='configure__type'>Break Length</p>
-                <button className='configure__remote' onClick={decreaseCounter}>
-                    <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
-                </button>
-                <p>{props.breakInterval} min</p>
-                <button className='configure__remote' onClick={increaseCounter}>
-                    <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
-                </button>
-            </div>
-
-            {/* <div className='configure'>
-                <p className='configure__type'>Play</p>
-                <button className='configure__remote' onClick={this.playTimer}>
-                    <FontAwesomeIcon icon={faPlay} />
-                </button>
-            </div>
-
-            <div className='configure'>
-                <p className='configure__type'>Pause</p>
-                <button className='configure__remote' onClick={this.stopTimer}>
-                    <FontAwesomeIcon icon={faPause} />
-                </button>
-            </div>
-
-            <div className='configure'>
-                <p className='configure__type'>Reset</p>
-                <button className='configure__remote' onClick={this.resetTimer}>
-                    <FontAwesomeIcon icon={faPowerOff} />
-                </button>
-            </div> */}
-
-        </div>
-    );
+        );
+    }
 }
 
 export default Configuration;
