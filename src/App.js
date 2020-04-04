@@ -87,7 +87,7 @@ class App extends React.Component {
   onResetTimer() {
     this.setState({
       timerMinute: this.state.sessionLength,
-      // timerSecond: 0,
+      timerSecond: 0
     })
   }
 
@@ -99,15 +99,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-6'>
+      <div className='container-fluid app-container'>
+        <div className='row app-row'>
+          <div className='col-6 app-col'>
             <Circle 
               timerMinute = {this.state.timerMinute}
               timerSecond = {this.state.timerSecond}
             />
           </div>
-          <div className='col-6'>
+          <div className='col-6 app-col'>
             <Welcome />
             <Configuration
               isPlay={this.state.isPlay}

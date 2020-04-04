@@ -13,17 +13,17 @@
   width: 562px;
 }
 
-.container-fluid {
+.app-container {
   width: 100vw;
   height: 100vh;
 }
 
-.row {
+.app-row {
   height: 100vh;
   align-items: center;
 }
 
-.col-6 {
+.app-col {
   text-align: center;
 }
 
@@ -43,14 +43,30 @@
   /* margin-top: 30px; */
 }
 
+.container {
+  width: 270px !important;
+}
+
 .configure {
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: black;
   color: white;
   margin: 5px;
   font-weight: bold;
   height: 45px;
   display: flex;
+}
+
+.configure__col {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  width: 80px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -10px;
 }
 
 .configure p {

@@ -171,7 +171,6 @@ class Configuration extends React.Component {
 
     // RESET
     resetTimer() {
-        this.sendData();
         this.stopTimer();
         this.props.resetTimer();
         this.props.onPlayStopTimer(false);
@@ -183,59 +182,61 @@ class Configuration extends React.Component {
 
     render() {
         return(
-            <div className='configuration'>
-            
-                <h5 style={{fontWeight: 'bold'}}>configuration</h5>
-    
-                <div className='configure'>
-                    <p className='configure__type'>Session Length</p>
-                    <button className='configure__remote' onClick={this.decreaseSession}>
-                        <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
-                    </button>
-                    <p>{this.props.sessionLength} min</p>
-                    <button className='configure__remote' onClick={this.increaseSession}>
-                        <FontAwesomeIcon className='configure__remote__up'  icon={faChevronUp} />
-                    </button>
-                </div>
-    
-                <div className='configure'>
-                    <p className='configure__type'>Break Length</p>
-                    <button className='configure__remote' onClick={this.decreaseCounter}>
-                        <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
-                    </button>
-                    <p>{this.props.breakInterval} min</p>
-                    <button className='configure__remote' onClick={this.increaseCounter}>
-                        <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
-                    </button>
-                </div>
-    
-                <div className='configure'>
-                    <p className='configure__type'>Play</p>
-                    <button className='configure__remote' onClick={this.playTimer}>
-                        <FontAwesomeIcon icon={faPlay} />
-                    </button>
-                </div>
-    
-                <div className='configure'>
-                    <p className='configure__type'>Pause</p>
-                    <button className='configure__remote' onClick={this.stopTimer}>
-                        <FontAwesomeIcon icon={faPause} />
-                    </button>
-                </div>
-    
-                <div className='configure'>
-                    <p className='configure__type'>Reset</p>
-                    <button className='configure__remote' onClick={this.resetTimer}>
-                        <FontAwesomeIcon icon={faPowerOff} />
-                    </button>
+            <div>
+
+                <div className='configuration'>
+                    <h5 style={{fontWeight: 'bold'}}>configuration</h5>
+                    <div className='configure'>
+                        <p className='configure__type'>Session Length</p>
+                        <button className='configure__remote' onClick={this.decreaseSession}>
+                            <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
+                        </button>
+                        <p>{this.props.sessionLength} min</p>
+                        <button className='configure__remote' onClick={this.increaseSession}>
+                            <FontAwesomeIcon className='configure__remote__up'  icon={faChevronUp} />
+                        </button>
+                    </div>
+                    <div className='configure'>
+                        <p className='configure__type'>Break Length</p>
+                        <button className='configure__remote' onClick={this.decreaseCounter}>
+                            <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
+                        </button>
+                        <p>{this.props.breakInterval} min</p>
+                        <button className='configure__remote' onClick={this.increaseCounter}>
+                            <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
+                        </button>
+                    </div>
                 </div>
 
-                <div className='configure'>
-                    <p>
-                    {this.state.timerSecond}                     
-                    </p>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-4'>
+                            <div className='configure__col'>
+                                <p>Play</p>
+                                <button className='configure__remote' onClick={this.playTimer}>
+                                    <FontAwesomeIcon icon={faPlay} />
+                                </button>
+                            </div>
+                        </div>
+                        <div className='col-4'>
+                            <div className='configure__col'>
+                                <p>Pause</p>
+                                <button className='configure__remote' onClick={this.stopTimer}>
+                                    <FontAwesomeIcon icon={faPause} />
+                                </button>
+                            </div>
+                        </div>
+                        <div className='col-4'>
+                            <div className='configure__col'>
+                                <p>Reset</p>
+                                <button className='configure__remote' onClick={this.resetTimer}>
+                                    <FontAwesomeIcon icon={faPowerOff} />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-    
+
             </div>
         );
     }
