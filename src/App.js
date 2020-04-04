@@ -35,6 +35,10 @@ class App extends React.Component {
     this.onDecreaseBreakLength = this.onDecreaseBreakLength.bind(this);
     this.onIncreaseSessionLength = this.onIncreaseSessionLength.bind(this);
     this.onDecreaseSessionLength = this.onDecreaseSessionLength.bind(this);
+    this.onToggleInterval = this.onToggleInterval.bind(this);
+    this.onUpdateTimerMinute = this.onUpdateTimerMinute.bind(this);
+    this.onResetTimer = this.onResetTimer.bind(this);
+    this.onPlayStopTimer = this.onPlayStopTimer.bind(this);
   }
 
   onIncreaseBreakLength() {
@@ -71,22 +75,64 @@ class App extends React.Component {
     })
   }
 
+  onUpdateTimerMinute() {
+    this.setState((prevState) => {
+      return {
+        timerMinute: prevState.timerMinute - 1
+      }
+    })
+  }
+
+  onToggleInterval(isSession) {
+    if(isSession) {
+      this.setState({
+        timerMinute: this.state.sessionLength
+      })
+    } else {
+      this.setState({
+        timerMinute: this.state.breakLength
+      })
+    }
+  }
+
+  onResetTimer() {
+    this.setState({
+      timerMinute: this.state.sessionLength
+    })
+  }
+
+  onPlayStopTimer(isPlay) {
+    this.setState({
+      isPlay: isPlay
+    })
+  }
+
   render() {
     return (
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-6'>
-            <Circle />
+            <Circle 
+              timerMinute = {this.state.timerMinute}
+              breakLength = {this.state.breakLength}
+              updateTimerMinute = {this.onUpdateTimerMinute}
+              toggleInterval = {this.onToggleInterval}
+              resetTimer = {this.onResetTimer}
+              onPlayStopTimer = {this.onPlayStopTimer}
+            />
           </div>
           <div className='col-6'>
             <Welcome />
             <Configuration
-              breakInterval={this.state.breakLength} 
-              increaseBreak={this.onIncreaseBreakLength}
-              decreaseBreak={this.onDecreaseBreakLength}
-              sessionLength={this.state.sessionLength} 
-              increaseSession={this.onIncreaseSessionLength}
-              decreaseSession={this.onDecreaseSessionLength}
+              isPlay={this.state.isPlay}
+
+              breakInterval = {this.state.breakLength} 
+              increaseBreak = {this.onIncreaseBreakLength}
+              decreaseBreak = {this.onDecreaseBreakLength}
+
+              sessionLength = {this.state.sessionLength} 
+              increaseSession = {this.onIncreaseSessionLength}
+              decreaseSession = {this.onDecreaseSessionLength}
             />
           </div>
         </div>

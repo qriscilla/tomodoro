@@ -94,35 +94,25 @@ function Configuration(props) {
             <h5 style={{fontWeight: 'bold'}}>configuration</h5>
 
             <div className='configure'>
-
-                <p className='configure__type'>Break Length</p>
-
-                <button className='configure__remote' onClick={decreaseCounter}>
-                    <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
-                </button>
-
-                <p>{props.breakInterval} min</p>
-
-                <button className='configure__remote' onClick={increaseCounter}>
-                    <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
-                </button>
-
-            </div>
-
-            <div className='configure'>
-
                 <p className='configure__type'>Session Length</p>
-
                 <button className='configure__remote' onClick={decreaseSession}>
                     <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
                 </button>
-
                 <p>{props.sessionLength} min</p>
-
                 <button className='configure__remote' onClick={increaseSession}>
                     <FontAwesomeIcon className='configure__remote__up'  icon={faChevronUp} />
                 </button>
-                
+            </div>
+
+            <div className='configure'>
+                <p className='configure__type'>Break Length</p>
+                <button className='configure__remote' onClick={decreaseCounter}>
+                    <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
+                </button>
+                <p>{props.breakInterval} min</p>
+                <button className='configure__remote' onClick={increaseCounter}>
+                    <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
+                </button>
             </div>
 
         </div>
