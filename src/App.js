@@ -12,6 +12,7 @@ class App extends React.Component {
       breakLength: 5,
       sessionLength: 25,
       timerMinute: 25,
+      timerSecond: 0,
       isPlay: false
     }
 
@@ -98,17 +99,20 @@ class App extends React.Component {
           <div className='col-6'>
             <Circle 
               timerMinute = {this.state.timerMinute}
-              breakLength = {this.state.breakLength}
-              updateTimerMinute = {this.onUpdateTimerMinute}
-              toggleInterval = {this.onToggleInterval}
-              resetTimer = {this.onResetTimer}
-              onPlayStopTimer = {this.onPlayStopTimer}
+              timerSecond = {this.state.timerSecond}
+              // breakLength = {this.state.breakLength}
             />
           </div>
           <div className='col-6'>
             <Welcome />
             <Configuration
               isPlay={this.state.isPlay}
+              onPlayStopTimer = {this.onPlayStopTimer}
+              resetTimer = {this.onResetTimer}
+              timerMinute = {this.state.timerMinute}
+              timerSecond = {this.state.timerSecond}
+              updateTimerMinute = {this.onUpdateTimerMinute}
+              toggleInterval = {this.onToggleInterval}
 
               breakInterval = {this.state.breakLength} 
               increaseBreak = {this.onIncreaseBreakLength}

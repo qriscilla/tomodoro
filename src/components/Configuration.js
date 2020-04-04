@@ -63,20 +63,27 @@ import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
 class Configuration extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            // isSession: true,
+            isSession: true,
+            timerSecond: this.props.timerSecond,
             // timerSecond: 0,
-            // intervalId: 0
+            intervalId: 0
         };
 
         this.decreaseCounter = this.decreaseCounter.bind(this);
         this.increaseCounter = this.increaseCounter.bind(this);
         this.decreaseSession = this.decreaseSession.bind(this);
         this.increaseSession = this.increaseSession.bind(this);
+
+        this.playTimer = this.playTimer.bind(this);
+        this.decreaseTimer = this.decreaseTimer.bind(this);
+        this.stopTimer = this.stopTimer.bind(this);
+        this.resetTimer = this.resetTimer.bind(this);
     }
 
+    // Decrease Break
     decreaseCounter() {
         if(this.props.breakInterval === 1) {
             return;
@@ -84,6 +91,7 @@ class Configuration extends React.Component {
         this.props.decreaseBreak();
     }
 
+    // Increase Break
     increaseCounter() {
         if(this.props.breakInterval === 60) {
             return;
@@ -91,6 +99,7 @@ class Configuration extends React.Component {
         this.props.increaseBreak();
     }
 
+    // Decrease Session
     decreaseSession() {
         if(this.props.sessionLength === 60) {
             return;
@@ -98,11 +107,71 @@ class Configuration extends React.Component {
         this.props.decreaseSession();
     }
 
+    // Increase Session
     increaseSession() {
         if(this.props.sessionLength === 1) {
             return;
         }
         this.props.increaseSession();
+    }
+
+    // PLAY
+    playTimer() {
+        let intervalId = setInterval(this.decreaseTimer, 1000);
+        this.props.onPlayStopTimer(true);
+        this.setState({
+            intervalId: intervalId
+        })
+    }
+
+    // Decrease seconds
+    decreaseTimer() {
+        switch(this.state.timerSecond) {
+            case 0:
+                if(this.props.timerMinute === 0) {
+                    if(this.state.isSession) {
+                        this.setState({
+                            isSession: false
+                        });
+                        this.props.toggleInterval(this.state.isSession);
+                    } else {
+                        this.setState({
+                            isSession: true
+                        });
+                        this.props.toggleInterval(this.state.isSession);
+                    }
+                } else {
+                    this.props.updateTimerMinute()
+                    this.setState({
+                        timerSecond: 59
+                    })
+                }
+                break;
+            default:
+                this.setState((prevState) => {
+                    return {
+                        timerSecond: prevState.timerSecond - 1
+                    }
+                })
+                break;
+        }
+    }
+
+    // PAUSE 
+    stopTimer() {
+        clearInterval(this.state.intervalId);
+        this.props.onPlayStopTimer(false);
+    }
+
+    // RESET
+    resetTimer() {
+        this.stopTimer();
+        this.props.resetTimer();
+        this.props.onPlayStopTimer(false);
+        this.setState({
+            timerSecond: 0,
+            isSession: true
+        });
     }
 
     render() {
