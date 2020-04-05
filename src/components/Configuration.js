@@ -211,28 +211,22 @@ class Configuration extends React.Component {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-4'>
-                            <div className='configure__col'>
+                            <button className='configure__col' onClick={this.playTimer}>
                                 <p>Play</p>
-                                <button className='configure__remote' onClick={this.playTimer}>
-                                    <FontAwesomeIcon icon={faPlay} />
-                                </button>
-                            </div>
+                                <FontAwesomeIcon className='configure__remote' icon={faPlay} />
+                            </button>
                         </div>
                         <div className='col-4'>
-                            <div className='configure__col'>
+                            <button className='configure__col' onClick={this.stopTimer}>
                                 <p>Pause</p>
-                                <button className='configure__remote' onClick={this.stopTimer}>
-                                    <FontAwesomeIcon icon={faPause} />
-                                </button>
-                            </div>
+                                <FontAwesomeIcon className='configure__remote' icon={faPause} />
+                            </button>
                         </div>
                         <div className='col-4'>
-                            <div className='configure__col'>
+                            <button className='configure__col' onClick={this.resetTimer}>
                                 <p>Reset</p>
-                                <button className='configure__remote' onClick={this.resetTimer}>
-                                    <FontAwesomeIcon icon={faPowerOff} />
-                                </button>
-                            </div>
+                                    <FontAwesomeIcon className='configure__remote' icon={faPowerOff} />
+                            </button>
                         </div>
                     </div>
                 </div>
