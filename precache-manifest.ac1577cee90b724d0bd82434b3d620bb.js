@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2194d3d207f38ea3ebcbae10e7cc8dbf",
+    "revision": "375663c7ae432834a21936dfdfadd1b8",
     "url": "/tomodoro/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tomodoro/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "5680105de6e66f4772a1",
-    "url": "/tomodoro/static/css/main.5aa222e8.chunk.css"
+    "revision": "175982fe65d38ac514ae",
+    "url": "/tomodoro/static/css/main.4e359aa7.chunk.css"
   },
   {
     "revision": "e8005e18c6190ee51bf1",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tomodoro/static/js/2.4a6df044.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5680105de6e66f4772a1",
-    "url": "/tomodoro/static/js/main.2e996801.chunk.js"
+    "revision": "175982fe65d38ac514ae",
+    "url": "/tomodoro/static/js/main.0a10ce2f.chunk.js"
   },
   {
     "revision": "a89706d9badf8afc8734",
