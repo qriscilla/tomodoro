@@ -99,15 +99,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid app-container'>
-        <div className='row app-row'>
-          <div className='col-6 app-col'>
+      <div className='container-fluid app__container'>
+        <div className='row app__row'>
+          <div className='col-6 app__col'>
             <Circle 
               timerMinute = {this.state.timerMinute}
               timerSecond = {this.state.timerSecond}
             />
           </div>
-          <div className='col-6 app-col'>
+          <div className='col-6 app__col'>
             <Welcome />
             <Configuration
               isPlay={this.state.isPlay}

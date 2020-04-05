@@ -68,7 +68,6 @@ class Configuration extends React.Component {
         this.state = {
             isSession: true,
             timerSecond: this.props.timerSecond,
-            // timerSecond: 0,
             intervalId: 0
         };
 
@@ -182,11 +181,31 @@ class Configuration extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='configuration'>
 
-                <div className='configuration'>
+                <div className='configuration__horizontals'>
                     <h5 style={{fontWeight: 'bold'}}>configuration</h5>
-                    <div className='configure'>
+                    <div className='horizontal'>
+                        <p className='configure__type'>Session Length</p>
+                        <button className='configure__remote' onClick={this.decreaseSession}>
+                            <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
+                        </button>
+                        <p>{this.props.sessionLength} min</p>
+                        <button className='configure__remote' onClick={this.increaseSession}>
+                            <FontAwesomeIcon className='configure__remote__up'  icon={faChevronUp} />
+                        </button>
+                    </div>
+                    <div className='horizontal'>
+                        <p className='configure__type'>Break Length</p>
+                        <button className='configure__remote' onClick={this.decreaseCounter}>
+                            <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
+                        </button>
+                        <p>{this.props.breakInterval} min</p>
+                        <button className='configure__remote' onClick={this.increaseCounter}>
+                            <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
+                        </button>
+                    </div>
+                    {/* <div className='configure'>
                         <p className='configure__type'>Session Length</p>
                         <button className='configure__remote' onClick={this.decreaseSession}>
                             <FontAwesomeIcon className='configure__remote__down' icon={faChevronUp} />
@@ -205,25 +224,25 @@ class Configuration extends React.Component {
                         <button className='configure__remote' onClick={this.increaseCounter}>
                             <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
-                <div className='container'>
+                <div className='container configuration__verticals'>
                     <div className='row'>
                         <div className='col-4'>
-                            <button className='configure__col' onClick={this.playTimer}>
+                            <button className='vertical' onClick={this.playTimer}>
                                 <p>Play</p>
                                 <FontAwesomeIcon className='configure__remote' icon={faPlay} />
                             </button>
                         </div>
                         <div className='col-4'>
-                            <button className='configure__col' onClick={this.stopTimer}>
+                            <button className='vertical' onClick={this.stopTimer}>
                                 <p>Pause</p>
                                 <FontAwesomeIcon className='configure__remote' icon={faPause} />
                             </button>
                         </div>
                         <div className='col-4'>
-                            <button className='configure__col' onClick={this.resetTimer}>
+                            <button className='vertical' onClick={this.resetTimer}>
                                 <p>Reset</p>
                                     <FontAwesomeIcon className='configure__remote' icon={faPowerOff} />
                             </button>

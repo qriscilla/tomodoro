@@ -1,53 +1,102 @@
-.img-welcome {
-  width: 40px;
-  height: 40px;
-  margin-top: -10px;
-}
-
+/* GLOBAL */
 * {
   margin: 0;
   padding: 0;
 }
 
-.img-circle {
-  width: 562px;
-}
 
-.app-container {
+
+/* App.js */
+.app__container {
   width: 100vw;
   height: 100vh;
 }
-
-.app-row {
+.app__row {
   height: 100vh;
   align-items: center;
 }
-
-.app-col {
+.app__col {
   text-align: center;
 }
 
+
+
+/* Circle.js */
+/* svg:hover .circle__image { opacity: 1; } */
 .circle {
   padding-top: 25px;
   padding-left: 60px;
 }
+.circle__svg1 {
+  transform: rotate(-90deg);
+  z-index: -1;
+  position: relative;
+}
+.circle__circle1 {
+  stroke-dasharray: 1900;
+  stroke-dashoffset: 0;
+  animation: progress calc(var(--pacman-rotation) * 1s);
+}
+/* .circle__svg2:hover .circle__circle2 { fill: rgba(0,0,0,0.5); } */
+/* .circle__svg2 .circle__circle2 { fill: rgba(0,0,0,0.5); } */
+.circle__image {
+  width: 562px;
+}
+@keyframes progress {
+	from { stroke-dashoffset: 1900; }
+	to { stroke-dashoffset: 0; }
+}
+*:root { --pacman-rotation: 0; }
+.circle__time {
+  font-size: 150px;
+  color: black;
+  margin-top: -430px;
+  margin-left: 150px;
+  position: fixed;
+}
 
-.welcome__p {
-  font-size: 20px;
+
+
+/* Welcome.js */
+.welcome__tomato {
+  width: 40px;
+  height: 40px;
   margin-top: -10px;
 }
+.welcome__p {
+  margin-top: -10px;
+  font-size: 20px;
+}
 
-.configuration {
+
+
+/* Configuration.js */
+.configuration p {
+  margin-top: 10px;
+}
+.configure__type {
+  margin-left: 5px;
+  margin-right: 20px;
+  width: 125px;
+}
+.configure__remote {
+  background-color: black;
+  border: none;
+  outline: none !important;
+  color: white;
+}
+.configure__remote__down {
+  transform: rotate(-180deg);
+  margin-right: 7px;
+}
+.configure__remote__up {
+  margin-left: 7px;
+}
+.configuration__horizontals {
   width: 270px;
   margin: auto;
-  /* margin-top: 30px; */
 }
-
-.container {
-  width: 270px !important;
-}
-
-.configure {
+.horizontal {
   border-radius: 5px;
   background-color: black;
   color: white;
@@ -56,8 +105,10 @@
   height: 45px;
   display: flex;
 }
-
-.configure__col {
+.configuration__verticals {
+  width: 270px !important;
+}
+.vertical {
   background-color: black;
   border-radius: 5px;
   color: white;
@@ -69,86 +120,21 @@
   margin-left: -10px;
   outline: none !important;
 }
-
-.configure__col:hover {
+.vertical:hover {
   background-color: white;
   color: black;
   border: 1px solid white;
 }
-
-.configure__col:focus {
+.vertical:focus {
   background-color: white;
   border: 3px solid black;
   color: black;
 }
-
-.configure__col:hover > .configure__remote {
+.vertical:hover > .configure__remote {
   background-color: white;
   color: black;
 }
-
-.configure__col:focus > .configure__remote {
+.vertical:focus > .configure__remote {
   background-color: white;
   color: black;
-}
-
-.configure p {
-  margin-top: 10px;
-}
-
-.configure__type {
-  margin-left: 5px;
-  margin-right: 20px;
-  width: 125px;
-}
-
-.configure__remote {
-  background-color: black;
-  border: none;
-  outline: none !important;
-  color: white;
-}
-
-.configure__remote__down {
-  transform: rotate(-180deg);
-  margin-right: 7px;
-}
-
-.configure__remote__up {
-  margin-left: 7px;
-}
-
-.svg {
-  transform: rotate(-90deg);
-  z-index: -1;
-  position: relative;
-}
-
-@keyframes progress {
-	from { stroke-dashoffset: 1900; }
-	to { stroke-dashoffset: 0; }
-}
-
-*:root { --pacman-rotation: 0; }
-
-.ciircle {
-  stroke-dasharray: 1900;
-  stroke-dashoffset: 0;
-  animation: progress calc(var(--pacman-rotation) * 1s);
-}
-
-/* svg:hover .img-circle {
-  opacity: 1;
-} */
-
-/* .svgg:hover .circlehover { fill: rgba(0,0,0,0.5); } */
-
-/* .svgg .circlehover { fill: rgba(0,0,0,0.5); } */
-
-.time {
-  font-size: 150px;
-  color: black;
-  margin-top: -430px;
-  margin-left: 150px;
-  position: fixed;
 }
