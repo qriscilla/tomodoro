@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/tomodoro/static/css/main.5aa222e8.chunk.css",
+    "main.js": "/tomodoro/static/js/main.2e996801.chunk.js",
+    "main.js.map": "/tomodoro/static/js/main.2e996801.chunk.js.map",
+    "runtime-main.js": "/tomodoro/static/js/runtime-main.87872264.js",
+    "runtime-main.js.map": "/tomodoro/static/js/runtime-main.87872264.js.map",
+    "static/css/2.de424728.chunk.css": "/tomodoro/static/css/2.de424728.chunk.css",
+    "static/js/2.4a6df044.chunk.js": "/tomodoro/static/js/2.4a6df044.chunk.js",
+    "static/js/2.4a6df044.chunk.js.map": "/tomodoro/static/js/2.4a6df044.chunk.js.map",
+    "index.html": "/tomodoro/index.html",
+    "precache-manifest.c2f8be5d79a87674972cc00a2420bb49.js": "/tomodoro/precache-manifest.c2f8be5d79a87674972cc00a2420bb49.js",
+    "service-worker.js": "/tomodoro/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/tomodoro/static/css/2.de424728.chunk.css.map",
+    "static/css/main.5aa222e8.chunk.css.map": "/tomodoro/static/css/main.5aa222e8.chunk.css.map",
+    "static/js/2.4a6df044.chunk.js.LICENSE.txt": "/tomodoro/static/js/2.4a6df044.chunk.js.LICENSE.txt",
+    "static/media/AnimeCropped.png": "/tomodoro/static/media/AnimeCropped.e7706f73.png",
+    "static/media/Tomato.png": "/tomodoro/static/media/Tomato.c98859b0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87872264.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.4a6df044.chunk.js",
+    "static/css/main.5aa222e8.chunk.css",
+    "static/js/main.2e996801.chunk.js"
+  ]
+}
