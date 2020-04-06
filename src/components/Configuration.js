@@ -184,7 +184,7 @@ class Configuration extends React.Component {
             <div className='configuration'>
 
                 <div className='configuration__horizontals'>
-                    <h5 style={{fontWeight: 'bold'}}>configuration</h5>
+                    {/* <h5 style={{fontWeight: 'bold'}}>configuration</h5> */}
                     <div className='horizontal'>
                         <p className='configure__type'>Session Length</p>
                         <button className='configure__remote' onClick={this.decreaseSession}>
