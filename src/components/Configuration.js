@@ -179,7 +179,8 @@ class Configuration extends React.Component {
         });
     }
 
-    render() {
+    render() { 
+
         return(
             <div className='configuration'>
 
@@ -192,7 +193,7 @@ class Configuration extends React.Component {
                         </button>
                         <p>{this.props.sessionLength} min</p>
                         <button className='configure__remote' onClick={this.increaseSession}>
-                            <FontAwesomeIcon className='configure__remote__up'  icon={faChevronUp} />
+                            <FontAwesomeIcon className='configure__remote__up' icon={faChevronUp} />
                         </button>
                     </div>
                     <div className='horizontal'>
@@ -232,19 +233,19 @@ class Configuration extends React.Component {
                         <div className='col-4'>
                             <button className='vertical' onClick={this.playTimer}>
                                 <p>Play</p>
-                                <FontAwesomeIcon className='configure__remote' icon={faPlay} />
+                                <FontAwesomeIcon className='vertical__icon' icon={faPlay} />
                             </button>
                         </div>
                         <div className='col-4'>
                             <button className='vertical' onClick={this.stopTimer}>
                                 <p>Pause</p>
-                                <FontAwesomeIcon className='configure__remote' icon={faPause} />
+                                <FontAwesomeIcon className='vertical__icon' icon={faPause} />
                             </button>
                         </div>
                         <div className='col-4'>
                             <button className='vertical' onClick={this.resetTimer}>
                                 <p>Reset</p>
-                                    <FontAwesomeIcon className='configure__remote' icon={faPowerOff} />
+                                    <FontAwesomeIcon className='vertical__icon' icon={faPowerOff} />
                             </button>
                         </div>
                     </div>

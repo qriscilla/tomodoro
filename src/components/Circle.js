@@ -8,6 +8,7 @@ import AnimeCropped from '../images/AnimeCropped.png';
 class Circle extends Component {
 
     render() {
+
         return (
             <div className='circle'>
 
